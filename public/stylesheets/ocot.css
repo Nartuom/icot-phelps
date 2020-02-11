@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'pecitamedium';
+    src: url('Pecita-webfont.eot');
+    src: url('Pecita-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Pecita-webfont.woff') format('woff'),
+         url('Pecita-webfont.ttf') format('truetype'),
+         url('Pecita-webfont.svg#pecitamedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0 ;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    background: #ffffff;
+    position: fixed;
+    display: block;
+    height: 8vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    margin: 0 0; 
+}
+
+.container {
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+nav ul {
+    list-style-type: none;
+    padding-top: 23px;
+    padding-bottom: 1rem;
+    width:100vw;
+    display: block;
+    margin: 0 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 30pt;
+
+}
+nav li:nth-of-type(1){
+    font-family: 'pecitamedium';
+    font-size: 1.5vw;
+    margin-left: 13vw;
+    margin-right: 32vw
+    
+}
+
+.grid-item-sign {
+    background-image: url("/assets/beach-2179183_1920@2x.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    grid-column: span 4;
+    grid-row: span 2;
+    width:100vw;
+
+    height: 68vh;
+    max-height: 68vh;
+}
+ .grid-item-sign div {
+     width: 80vw;
+     height:auto;
+     margin: 28vh auto;
+ }
+
+ .grid-item-sign h1 {
+    white-space: nowrap;
+    font-family: 'pecitamedium';
+    font-size: 5vw;
+    margin: 0 0;
+    padding:0 0;
+ }
+
+ .grid-item-sign h4 {
+     font-family: "Poppins", sans-serif;
+     font-size: 1.5vw;
+ }
+
+ .skills {
+     text-align: center;
+     padding: 2rem 2rem;
+     width: 17vw;
+
+ }
+
+ .skills img {
+     height: 8.5vh;
+     width: auto;
+     opacity: 80%;
+ }
+
+ .grid-item.meet {
+    background-color: #DFDFDF;
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 306pt;
+    width:37vw;
+
+    text-align: center;
+    padding-left: 13vw;
+    padding-right: 30px;
+    font-size:1.125rem;
+ }
+
+ .grid-item.meet h4 {
+     font-weight: 400;
+     font-size: 2.6rem;
+ }
+
+ .grid-item.portrait {
+    
+    grid-column: span 2;
+    grid-row: span 2;
+    width:50vw;
+    height: 306pt;
+ }
+
+ .portrait img {
+     max-width: 100%;
+     height: auto;
+     display: block;
+ }
+
+ .grid-item.testimony {
+     background-color: #D5E7EB;
+
+     text-align: center;
+     padding: 40pt 40pt;
+
+     grid-column: span 2;
+     grid-row: span 1.5;
+ }
+
+ .grid-item.contact {
+     grid-column: span 4;
+     grid-row: span 1;
+
+     text-align: center;
+     padding-top: 50pt;
+     padding-bottom: 60pt;
+
+ }
+
+ .grid-item-footer {
+     grid-column: span 4;
+     grid-row: span 1;
+     background: #3A7C91;
+     color: #ffffff;
+     font-size: 1.125rem;
+     text-align:center;
+ }

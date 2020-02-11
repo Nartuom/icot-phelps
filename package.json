@@ -1,0 +1,23 @@
+{
+  "name": "mumswebsite",
+  "version": "1.0.0",
+  "description": "Indoor Counselling, outdoor therapy site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nartuom/icot-phelps.git"
+  },
+  "author": "TBL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nartuom/icot-phelps/issues"
+  },
+  "homepage": "https://github.com/Nartuom/icot-phelps#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
