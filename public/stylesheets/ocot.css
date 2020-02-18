@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4.7rem;
+    height: 4.5rem;
     width: 100vw;
     top: 0;
     left: 0;
@@ -40,9 +40,8 @@ body {
     font-family: 'pecitamedium';
     font-size: 1.5rem;
     margin-left: 13.2vw;
-    padding: 1rem 1rem;
-    min-width: 200px;
-    
+    padding: 1.5rem 1.5rem;
+    min-width: 200px; 
 }
 
 .navbar-links {
@@ -64,19 +63,61 @@ body {
 
 .navbar-links li a {
     text-decoration: none;
-    padding: 1.5rem 1rem 0;
+    padding: 1.5rem 1rem 1rem;
     display: block;
     min-width: 90px;;
 }
 
 .navbar-links li a:hover {
-    background-color: grey;
+    background-color: rgba(122, 122, 122, 0.5);
 
 }
 
 .navbar-links li:last-of-type{
     margin-right: 13.2vw;
 }
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+.dropdown .dropbtn {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+
+  /* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+  }
 
 .toggle-button {
     position: absolute;
@@ -131,7 +172,7 @@ body {
     }
 
     .navbar-links li a:hover {
-        background-color: grey;
+        background-color: rgba(122, 122, 122, 0.5);
     
     }
     
@@ -142,8 +183,6 @@ body {
     .grid-item-sign h1 {
         font-size: 10vh ;
     }
-
-    
 }
 
 a:link {
@@ -306,6 +345,17 @@ a:visited {
      font-size: 1.125rem;
      text-align:center;
      margin-top: 2rem;
+ }
+
+ button {
+     padding: 0.4rem 0.4rem;
+     background: white;
+     border: 2px solid #7B7B7B;
+     border-radius: 4px;
+     font-family: "Poppins", sans-serif;
+ }
+ button:hover {
+     background: rgba(122, 122, 122, 0.5);
  }
 
  /* About Page */
