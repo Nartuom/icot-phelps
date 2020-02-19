@@ -13,14 +13,29 @@ app.get("/about", function(req, res){
     res.render("about");
 });
 
-app.get("/services", function(req, res){
-    res.render("services");
-});
-
 app.get("/faq", function(req, res){
     res.render("faq");
 });
 
+app.get("/indoor", function(req, res){
+    res.render("indoor")
+});
+
+app.get("/outdoor", function(req, res){
+    res.render("outdoor")
+});
+
+app.get("/supervision", function(req, res){
+    res.render("supervision");
+});
+
+app.get("/creative", function(req, res){
+    res.render("creative");
+});
+
+app.get("/training", function(req, res){
+    res.render("training");
+});
 app.get("*", function(req, res, next){
     let err = new Error(`${req.ip} tried to reach ${req.originalUrl}`);
     err.statusCode = 404;
