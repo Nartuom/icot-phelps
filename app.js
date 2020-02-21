@@ -36,6 +36,10 @@ app.get("/creative", function(req, res){
 app.get("/training", function(req, res){
     res.render("training");
 });
+
+app.get("/contact", function(req, res){
+    res.render("contact");
+});
 app.get("*", function(req, res, next){
     let err = new Error(`${req.ip} tried to reach ${req.originalUrl}`);
     err.statusCode = 404;

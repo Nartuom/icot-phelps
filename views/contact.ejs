@@ -1,0 +1,53 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+
+<div class="grid-item banner">
+    <img  src="/assets/sea_1920.png">
+</div>
+
+<div class="grid-item about">
+    <div class="form-wrap">
+        <form method="POST">
+            <h2>Contact me</h2>
+            <h5>Send me a message</h5>
+            <div class="field-wrap">
+                <label for="name"><strong>Name<abbr title="required" aria-label="required">*</abbr></strong></label><br>
+                <input id="name" type="text" name="user_name">
+            </div>
+            <div class="field-wrap">
+                <label for="email"><strong>Email<abbr title="required" aria-label="required">*</abbr></strong></label><br>
+                <input id="email" type="text" name="user_email">
+            </div>
+            <div>
+                <label for="message"><strong>Message<abbr title="required" aria-label="required">*</abbr></strong></label><br>
+                <input id="message" type="text" name="user_message">
+            </div>
+            <button>Send</button>
+        </form>    
+    </div>
+
+    <div class="contact-wrap">
+        <h5>Contact information</h5>
+        <p><strong>Telephone</strong></p>
+        <p>07742 239043</p>
+        <p><strong>Email</strong></p>
+        <p>email@email.com</p>
+        <p><strong>Address</strong></p>
+        <p>Weston-Super-Mare, Somerset, BS22</p>
+
+    </div>
+    
+
+    <div class="img-wrap">
+        <img src="/assets/mel_snow.png">
+    </div>
+
+</div>
+
+
+
+
+
+<%- include("partials/footer") %>
+  
