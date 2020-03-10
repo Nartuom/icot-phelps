@@ -4,6 +4,7 @@ const   nodemailer  = require("nodemailer"),
         express     = require("express"),
         ejs         = require("ejs"),
         app         = express();
+        require('dotenv').config();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -83,7 +84,7 @@ app.post("/", function(req, res, next){
     // send mail with defined transport object
     transporter.sendMail({
         from: email, // sender address
-        to: "melphelps@live.co.uk", // list of receivers
+        to: "thomas.burton.lawl@gmail.com", // list of receivers
         subject: "Client Enquiry", // Subject line
         html: message,
         }, function(error, info){
