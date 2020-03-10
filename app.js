@@ -13,13 +13,6 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
-//middleware
-
-const handleRedirect = function(req, res){
-    console.log("Post successful");
-    res.redirect("index");
-}
-
 app.get("/", function(req, res, next){
     res.render("index");
 });
@@ -66,39 +59,37 @@ app.get("*", function(req, res, next){
 app.post("/", function(req, res, next){
     async function main() {
 
-    const email = `${req.body.user_email}`;
-    const name  = `${req.body.user_name}`;
-    const message = 
-        `<div><h3>New message from:</h3>${email}</div> 
-        <div><h4>Name:</h4> ${name} </div>
-        <div><h5>Message:</h5> ${req.body.user_message}</div>`      
-        ;
-    
-    //Nodemailer route fror emails
-    const transporter = nodemailer.createTransport(
-        nodemailerSendgrid({
-            apiKey: process.env.SENDGRID_API_KEY,
-        })
-    );
+        const email = `${req.body.user_email}`;
+        const name  = `${req.body.user_name}`;
+        const message = 
+            `<div><h3>New message from:</h3>${email}</div> 
+            <div><h4>Name:</h4> ${name} </div>
+            <div><h5>Message:</h5> ${req.body.user_message}</div>`      
+            ;
+        
+        //Nodemailer route fror emails
+        const transporter = nodemailer.createTransport(
+            nodemailerSendgrid({
+                apiKey: process.env.SENDGRID_API_KEY,
+            })
+        );
 
-    // send mail with defined transport object
-    transporter.sendMail({
-        from: email, // sender address
-        to: "thomas.burton.lawl@gmail.com", // list of receivers
-        subject: "Client Enquiry", // Subject line
-        html: message,
-        }, function(error, info){
-        if(error) {
-            console.log(error);
-        } else {
-            console.log("Message sent successfully:");
-            }
-
-        });
-    }
-    main().catch(console.error);
-    next(res.render("index"));  
-    
+        // send mail with defined transport object
+        transporter.sendMail({
+            from: email, // sender address
+            to: "thomas.burton.lawl@gmail.com", // list of receivers
+            subject: "Client Enquiry", // Subject line
+            html: message,
+            }, function(error, info){
+            if(error) {
+                console.log(error);
+            } else {
+                console.log("Message sent successfully:");
+                }
+            });
+        }   
+        main().catch(console.error);
+        next(res.render("index")); 
 });
 
 
