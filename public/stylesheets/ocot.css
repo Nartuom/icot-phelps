@@ -1,5 +1,6 @@
 @font-face {
     font-family: 'pecitamedium';
+    font-display: auto;
     src: url('Pecita-webfont.eot');
     src: url('Pecita-webfont.eot?#iefix') format('embedded-opentype'),
          url('Pecita-webfont.woff') format('woff'),
@@ -18,31 +19,31 @@ body {
     width: 100vw;
     margin: 0 ;
     padding: 0;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     font-family: "Poppins", sans-serif;
 }
 
+/* Navbar Styles */
 .navbar {
     background: #ffffff;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4.7rem;
+    height: 4.5rem;
     width: 100vw;
     top: 0;
     left: 0;
     margin: 0 0;
+    padding: 0 13.2vw;
     z-index: 1;
 }
 
 .brand-title {
     font-family: 'pecitamedium';
     font-size: 1.5rem;
-    margin-left: 13.2vw;
-    padding: 1rem 1rem;
-    min-width: 200px;
-    
+    padding: 1.5rem 0 1.5rem 0;
+    min-width: 220px; 
 }
 
 .navbar-links {
@@ -58,25 +59,80 @@ body {
 .navbar-links li {
     list-style: none;
     display: block;
+    text-align: center;
     background: #ffffff;
     min-width: 112px;
+    height: 4.5rem;
 }
 
 .navbar-links li a {
     text-decoration: none;
-    padding: 1.5rem 1rem 0;
+    padding: 1.8rem 0 1.6rem;
+    margin-right: 1.5rem;
     display: block;
-    min-width: 90px;;
+    min-width: 112px;
+
+}
+.navbar-links li a:last-of-type{
+    margin-right: 0;
 }
 
 .navbar-links li a:hover {
-    background-color: grey;
+    color: #ffffff;
+    background-color: #3A7C91;
 
 }
 
-.navbar-links li:last-of-type{
-    margin-right: 13.2vw;
+.dropdown {
+    overflow: hidden;
 }
+
+.dropdown .dropbtn {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+    padding: inherit;
+}
+
+#apad-fix {
+    padding: 1.8rem 0 1.45rem;
+}
+
+  /* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3A7C91;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+.navbar .dropdown-content a {
+    float: none;
+    color: #ffffff;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+#burger-fix {
+    display:none;
+}
+
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    transition: ease-in;
+  }
+
+  /* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+  }
 
 .toggle-button {
     position: absolute;
@@ -131,7 +187,7 @@ body {
     }
 
     .navbar-links li a:hover {
-        background-color: grey;
+        background-color: rgba(122, 122, 122, 0.5);
     
     }
     
@@ -143,7 +199,13 @@ body {
         font-size: 10vh ;
     }
 
-    
+    .dropdown-content{
+        width: 73.6vw;
+    }
+
+    .dropdown-content:hover #burger-fix {
+        display: block;
+    }
 }
 
 a:link {
@@ -154,6 +216,7 @@ a:visited {
     text-decoration: none;
  }
 
+ /*Document Styling  */
  .container {
     width: 100vw;
     height: 100%;
@@ -166,7 +229,7 @@ a:visited {
 
 .grid-item-sign {
     display:flex;
-    background-image: url("/assets/beach-2179183_1920@2x.png");
+    background-image: url("/assets/beach-1920.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -187,8 +250,7 @@ a:visited {
      margin: 25vh auto;
  }
 
- .grid-item-sign h1 {
-    white-space: nowrap;
+h1 {
     font-family: 'pecitamedium';
     font-size: calc(6vw + 0.5vh);
     font-weight: 400;
@@ -197,10 +259,29 @@ a:visited {
     height: auto;
  }
 
- .grid-item-sign h4 {
-     font-family: "Poppins", sans-serif;
+ h2{
+    font-size: calc(6vh + 0.2vw);
+    font-weight: 400;
+    margin-top: 4.5vh;
+    margin-bottom: 1vh;
+}
+
+ h3 {
+    font-size: 5vh;
+    font-weight: 400; 
+    margin: 0;  
+}
+
+h4 {
+    font-size: 3.5vh;
+    font-weight: 400;
+    min-width: 250px;
+ }
+
+ h5 {
      font-size: 2.8vh;
-     min-width: 250px;
+     font-weight: 400;
+     margin: 0 0 1rem;
  }
 
  .skills-container {
@@ -223,7 +304,7 @@ a:visited {
     padding: 2em 0;
     height: 300px;
     min-width: 200px;
-    width: 20%;
+    width: 17%;
     margin: 2em 1em 2em;
  }
 
@@ -245,6 +326,13 @@ a:visited {
     font-size: 1.125rem;
     
  }
+
+ button a {
+     display: block;
+     overflow: auto;
+     height: 100%;
+     width:100%;
+ }
 .hello{
     width: 50%;
     min-width: 360px;
@@ -254,11 +342,7 @@ a:visited {
     flex-grow: 1;
 }
 
-.hello h4 {
-    font-size: 2.6rem;
-    font-weight: 400; 
-    margin: 0;  
-}
+
 .hello-wrap {
     padding: 4rem 5rem;
 }
@@ -308,6 +392,17 @@ a:visited {
      margin-top: 2rem;
  }
 
+ button {
+     padding: 0.4rem 0.4rem;
+     background: white;
+     border: 2px solid #7B7B7B;
+     border-radius: 4px;
+     font-family: "Poppins", sans-serif;
+ }
+ button:hover {
+     background: rgba(122, 122, 122, 0.5);
+ }
+
  /* About Page */
 
  .grid-item.banner {
@@ -324,61 +419,81 @@ a:visited {
  }
 
  .grid-item.about {
-     grid-column: span 3;
-     margin-left:13.2vw;
-     padding-right:2.65vw;
+     grid-column: span 4;
+     display: inline-flex;
+     flex-wrap: wrap;
+     flex-grow: 1;
+     margin: 0 13.2vw;
      font-family: "Poppins", sans-serif;
      font-size: 1.125rem;
- }
- .about h2{
-     font-size: 6.2vh;
-     font-weight: 400;
-     margin: 4.3vh 0 0 0;
-
+     justify-content: space-evenly;
+     padding: 0 1rem;
  }
 
- .about h3 {
-     font-size: 4.5vh;
-     font-weight: 400;
-
-     margin-top: 1.9rem;
-     margin-bottom: 0.6rem;
+ .text-wrap {
+     width: 43vw;
+     max-width: 73.6vw;
+     min-width: 360px;
+     flex-grow: 1;
+     padding:0 1rem 0 0;
  }
 
- .about p {
-     margin-top: 3.5vh;
- }
-
- .grid-item.angel-wrap {
-     grid-column: span 1;
-     margin-right: 13.2vw;
-     margin-top: 15vh;
+ .img-wrap {
+     min-width: 360px;
+     margin-top: 14vh;
      margin-bottom: 12.6vh;
-     object-fit: cover;
+     width: 1fr;
+     
  }
 
- .angel-wrap img {
-     height: 58.5vh;
-     width: auto;
+ .img-wrap img {
+     object-fit: cover;
+     height: 100%;
+     width: 100%;
  }
 
  /* FAQ page */
 
 .faq {
     grid-column: span 4;
-     grid-row: 2;
-     text-align: left;
-     margin: 0.5rem 13.2vw;
+    grid-row: 2;
+    text-align: left;
+    margin: 2rem 13.2vw;
  }
 
- .faq h3 {
-     font-size: 6.4vh;
-     font-weight: 400;
-     margin: 1rem 0;
+ /* Contact Page */
+
+.form-wrap {
+    display:flex;
+    min-width: 360px;
+    width: 22vw;
+    min-width: 360px;
+    padding:0 1rem 0 0;
+    flex-grow: 1;
+ }
+ form {
+     width: 22vw;
+     flex-grow:1;
  }
 
- .faq h4 {
-     font-size: 4vh;
-     font-weight: 400;
-     margin: 1rem 0;
+ .contact-wrap {
+     margin-top: 14vh;
+     min-width: 360px;
+     width: 14vw;
+     flex-grow: 1;
+
+     font-size: 2.2vh;
+ }
+
+ .form-wrap input {
+     width: 90%;
+     flex-grow: 1;
+     padding: 5px 5px;
+     border: 1px solid #7B7B7B;
+     border-radius: 5px;
+     margin: 1vh 1rem 3vh 0;
+ }
+
+#message {
+     height: 15vh;
  }
