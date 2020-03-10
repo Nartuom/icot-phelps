@@ -1,4 +1,5 @@
 const   nodemailer  = require("nodemailer"),
+        nodemailerSendgrid = require("nodemailer-sendgrid"),
         bodyParser  = require("body-parser"),
         express     = require("express"),
         ejs         = require("ejs"),
@@ -61,37 +62,36 @@ app.get("*", function(req, res, next){
     res.redirect("/");
 });
 
+//POST route form contact form
 app.post("/", function(req, res, next){
     async function main() {
 
     const email = `${req.body.user_email}`;
     const name  = `${req.body.user_name}`;
-    const message = `${req.body.user_message}`;
+    const message = 
+        `<div><h3>New message from:</h3>${email}</div> 
+        <div><h4>Name:</h4> ${name} </div>
+        <div><h5>Message:</h5> ${req.body.user_message}</div>`      
+        ;
+    
     //Nodemailer route fror emails
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-        user: process.env.AD_EMAIL, // generated ethereal user
-        pass: process.env.AD_PASSWORD // generated ethereal password
-        },
-        tls:{
-            rejectUnauthorized:false
-        }
-    });
+    const transporter = nodemailer.createTransport(
+        nodemailerSendgrid({
+            apiKey: process.env.SENDGRID_API_KEY,
+        })
+    );
 
     // send mail with defined transport object
     transporter.sendMail({
         from: email, // sender address
-        to: process.env.AD_EMAIL, // list of receivers
+        to: "melphelps@live.co.uk", // list of receivers
         subject: "Client Enquiry", // Subject line
-        text: "New Message from " + name +
-        "Email: " + email +
-        "Message: " + message
+        html: message,
         }, function(error, info){
         if(error) {
             console.log(error);
         } else {
-            console.log("Message sent successfully: %s", info.messageId);
+            console.log("Message sent successfully:");
             }
 
         });
