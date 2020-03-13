@@ -19,7 +19,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     font-family: "Poppins", sans-serif;
-    font-size: 18pt;
+    font-size: 18px;
 }
 /* Navbar Styles */
 .navbar {
@@ -32,7 +32,7 @@ body {
     width: 100vw;
     top: 0;
     left: 0;
-    font-size: 18pt;
+    font-size: 18px;
     text-transform: uppercase;
     margin: 0 0;
     padding: 0 13.2vw;
@@ -40,7 +40,7 @@ body {
 }
 .brand-title {
     font-family: 'pecitamedium';
-    font-size: 18pt;
+    font-size: 18px;
     white-space: nowrap;
     padding: 1.5rem 0 1.5rem 0;
     margin-right: 2rem;
@@ -182,14 +182,14 @@ a:visited {
  
 h1 {
     font-family: 'pecitamedium';
-    font-size: 120pt;
+    font-size: 120px;
     font-weight: 400;
     margin: 0 0;
     padding:0 0;
     height: auto;
  }
 h2{
-    font-size: 26pt;
+    font-size: 26px;
     font-weight: 400;
     margin:0;
 }
@@ -256,7 +256,7 @@ h5 {
 }
 
 button {
-    font-size: 18pt;
+    font-size: 18px;
 }
 button:hover {
     color: #3A7C91;
