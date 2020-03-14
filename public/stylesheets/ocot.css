@@ -194,7 +194,7 @@ h2{
     margin:0;
 }
 h3 {
-    font-size: calc(5vh + 0.5vw);
+    font-size: 22px;
     font-weight: 400; 
     margin: 0;  
 }
@@ -265,18 +265,20 @@ button:hover {
     cursor: pointer;
 }
 .hello{
-    width: 50%;
-    min-width: 360px;
-    max-width: 960px;
+    display:flex;
+    flex-basis: 50%;
     grid-row: span 2;
     flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
 }
 .hello h2 {
-    font-size: 42pt;
+    font-size: 42px;
 }
 .hello-wrap {
     margin-left: 10.2vw;
     padding: 1em;
+    align-items: center;
 }
 .hello-wrap p {
     padding: 0.5em;
@@ -286,11 +288,10 @@ button:hover {
     padding: 0.5em;
 }
 .portrait{
-    width: 50%;
-    min-width: 360px;
-    max-width: 950px;
-    height:auto;
+    display:flex;
+    flex-basis: 50%;
     flex-grow: 1;
+    flex-shrink: 3;
     grid-row: span 2;
 }
 .portrait img {
@@ -356,7 +357,7 @@ button {
      display: inline-flex;
      flex-wrap: wrap;
      flex-grow: 1;
-     margin: 0 13.2vw;
+     margin: 10vh 10.2vw;
      justify-content: space-evenly;
      padding: 0 1rem;
 }
@@ -364,13 +365,12 @@ button {
      display:flex;
      flex-grow: 1;
      flex-basis:50%;
-     padding:0 1rem 0 0;
+     padding:2rem 1rem ;
 }
 .img-wrap {
     display: flex;
     flex-grow: 1;
-     margin-top: 14vh;
-     margin-bottom: 12.6vh;  
+    padding: 2em 1em;
 }
 .img-wrap img {
      object-fit: cover;
