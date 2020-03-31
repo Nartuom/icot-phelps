@@ -18,7 +18,7 @@ body {
     margin: 0 ;
     padding: 0;
     overflow-x: hidden;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
 }
 /* Navbar Styles */
@@ -139,12 +139,12 @@ body {
     background-color: gray;
     border-radius: 10px;
 }
-a:link {
+nav a:link {
     text-decoration: none;
     color: black;
   }
   
-a:visited {
+nav a:visited {
     text-decoration: none;
     color: black;
  }
@@ -209,6 +209,10 @@ h5 {
      padding: 0.5em 0.5em;
      margin: 0;
 }
+
+p, li {
+    line-height: 25px;
+}
 .skills-container {
      display: inline-flex;
      grid-column: span 4;
@@ -242,6 +246,7 @@ h5 {
     display: block;
     height: 100%;
     width:100%;
+    text-decoration: none;
 }
 
 .meet.grid-item {
@@ -283,6 +288,7 @@ button:hover {
 .hello-wrap p {
     padding: 0.5em;
     margin: 0;
+    line-height: 25px;
 }
 .hello-wrap img {
     padding: 0.5em;
@@ -293,11 +299,14 @@ button:hover {
     flex-grow: 1;
     flex-shrink: 3;
     grid-row: span 2;
+    justify-content: center;
 }
 .portrait img {
      width: 100%;
      height: 100%;
-     object-fit: cover;
+     object-fit:  cover;
+     align-self: center;
+
 }
 .grid-item.testimony {
      background-color: #D5E7EB;
@@ -371,6 +380,7 @@ button {
     display: flex;
     flex-grow: 1;
     padding: 2em 1em;
+    align-self: flex-start;
 }
 .img-wrap img {
      object-fit: cover;
@@ -395,12 +405,14 @@ button {
     padding:0 1rem 0 0;
     flex-grow: 1;
  }
+ .form-wrap h2 {
+     padding-bottom: 0.5em;
+ }
  form {
      width: 22vw;
      flex-grow:1;
  }
 .contact-wrap {
-     margin-top: 14vh;
      min-width: 360px;
      width: 14vw;
      flex-grow: 1;
