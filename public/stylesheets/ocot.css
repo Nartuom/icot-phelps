@@ -463,8 +463,8 @@ button {
     h1 {
         font-size: calc(6vh + 0.5vw);
     }
-    h2 {
-        font-size: 18px;
+    .grid-item-sign h2 {
+         font-size: 18px;
     }
     h4 {
         font-size: calc(2vh + 0.5vw);
