@@ -18,7 +18,7 @@ body {
     margin: 0 ;
     padding: 0;
     overflow-x: hidden;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
 }
 /* Navbar Styles */
@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4.5rem;
+    height: 72px;
     width: 100vw;
     top: 0;
     left: 0;
@@ -40,9 +40,9 @@ body {
 }
 .brand-title {
     font-family: 'pecitamedium';
-    font-size: 18px;
+    font-size: 32px;
     white-space: nowrap;
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 1.5rem 0 0.5rem 0;
     margin-right: 2rem;
     text-transform:capitalize;
 }
@@ -61,7 +61,7 @@ body {
     background: #ffffff;
     height: 100%;
 }
-.navbar-links li a {
+.navbar-links a {
     text-decoration: none;
     white-space: nowrap;
     display: block;
@@ -69,6 +69,7 @@ body {
     height: 100%;
     text-align: center;
     padding: 1.5rem 1.5rem;
+    cursor: pointer;
 }
 .navbar-links li a:last-of-type{
     margin-right: 0;
@@ -129,22 +130,22 @@ body {
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 21px;
+    height: 24px;
     z-index: 2;
-    margin: 0.5rem 13.2vw;
+    margin: 1rem 5.2vw 0 0;
 }
 .toggle-button .bar {
-    height: 3px;
+    height: 4px;
     width: 100%;
     background-color: gray;
     border-radius: 10px;
 }
-a:link {
+nav a:link {
     text-decoration: none;
     color: black;
   }
   
-a:visited {
+nav a:visited {
     text-decoration: none;
     color: black;
  }
@@ -209,6 +210,10 @@ h5 {
      padding: 0.5em 0.5em;
      margin: 0;
 }
+
+p, li {
+    line-height: 25px;
+}
 .skills-container {
      display: inline-flex;
      grid-column: span 4;
@@ -242,6 +247,7 @@ h5 {
     display: block;
     height: 100%;
     width:100%;
+    text-decoration: none;
 }
 
 .meet.grid-item {
@@ -283,6 +289,7 @@ button:hover {
 .hello-wrap p {
     padding: 0.5em;
     margin: 0;
+    line-height: 25px;
 }
 .hello-wrap img {
     padding: 0.5em;
@@ -293,11 +300,14 @@ button:hover {
     flex-grow: 1;
     flex-shrink: 3;
     grid-row: span 2;
+    justify-content: center;
 }
 .portrait img {
      width: 100%;
      height: 100%;
-     object-fit: cover;
+     object-fit:  cover;
+     align-self: center;
+
 }
 .grid-item.testimony {
      background-color: #D5E7EB;
@@ -359,7 +369,6 @@ button {
      flex-grow: 1;
      margin: 10vh 10.2vw;
      justify-content: space-evenly;
-     padding: 0 1rem;
 }
 .text-wrap {
      display:flex;
@@ -370,7 +379,8 @@ button {
 .img-wrap {
     display: flex;
     flex-grow: 1;
-    padding: 2em 1em;
+    padding: 2rem 1rem;
+    align-self: flex-start;
 }
 .img-wrap img {
      object-fit: cover;
@@ -383,7 +393,7 @@ button {
     grid-column: span 4;
     grid-row: 2;
     text-align: left;
-    margin: 2rem 13.2vw;
+    margin: 2rem 10.2vw;
 }
 
  /* Contact Page */
@@ -395,12 +405,14 @@ button {
     padding:0 1rem 0 0;
     flex-grow: 1;
  }
+ .form-wrap h2 {
+     padding-bottom: 0.5em;
+ }
  form {
      width: 22vw;
      flex-grow:1;
  }
 .contact-wrap {
-     margin-top: 14vh;
      min-width: 360px;
      width: 14vw;
      flex-grow: 1;
@@ -432,13 +444,12 @@ button {
     .navbar-links ul {
         flex-direction: column;
         width: 100%;
+        position:absolute;
+        top:72px;
+        left:0;
     }
     .navbar-links li {
         text-align: center;
-        margin-top: -7px;
-    }
-    .navbar-links li a {
-        padding: 1rem 1rem;
     }
     .navbar-links.active {
         display: flex;
@@ -450,16 +461,31 @@ button {
     margin-right: 0;
     } 
     h1 {
-        font-size: calc(4vh + 0.5vw);
+        font-size: calc(6vh + 0.5vw);
     }
     h4 {
         font-size: calc(2vh + 0.5vw);
     }
     .dropdown-content{
-        width: 69.3vw;
+        width: 100%;
+        text-align:center;
     }
     .dropdown-content:hover #burger-fix {
         display: block;
+    }
+    .hello-wrap {
+        margin: 0;
+    }
+    .text-wrap {
+        padding: 0;
+    }
+
+    .form-wrap{
+        padding: 0 10.2vw;
+        margin-bottom: 1.5rem;
+    }
+    .contact-wrap {
+        padding: 0 10.2vw;
     }
 }
 

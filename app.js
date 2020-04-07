@@ -40,8 +40,8 @@ app.get("/supervision", function(req, res){
     res.render("supervision");
 });
 
-app.get("/creative", function(req, res){
-    res.render("creative");
+app.get("/hypnobirthing", function(req, res){
+    res.render("hypnobirthing");
 });
 
 app.get("/training", function(req, res){
