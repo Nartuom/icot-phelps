@@ -9,7 +9,7 @@ navbarLinks.addEventListener("mouseleave", () =>{
     if(navbarLinks.classList.contains("active")){
         setTimeout(function() {
             navbarLinks.classList.toggle("active");
-        }, 400);
+        }, 3000);
     }
 });
 
@@ -17,13 +17,13 @@ navbarLinks.addEventListener("mouseleave", () =>{
 const links = [...navbarLinks.getElementsByTagName("a")];
 const path = window.location.pathname;
 const page = path.split("/").pop();
+const services = document.getElementById("servicesLink");
 function highlightNav(){
     links.forEach(function(link){
-        if(link.href.split("/").pop() == page){
+        if(link.href.split("/").pop() == page && link !== services){
             link.style.color = "#3a7c91";
             link.style.fontWeight = "600";
             if(link.classList.contains("dropdownLinks")){
-                let services = document.getElementById("servicesLink");
                 services.style.color = "#3A7C91";
                 services.style.fontWeight = "600"
                 link.style.color = "#D7E4E9";
