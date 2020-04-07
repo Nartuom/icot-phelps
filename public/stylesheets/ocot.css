@@ -140,8 +140,7 @@ body {
 nav a:link {
     text-decoration: none;
     color: black;
-  }
-  
+}  
 nav a:visited {
     text-decoration: none;
     color: black;
@@ -163,7 +162,6 @@ nav a:visited {
     background-repeat: no-repeat;
     background-position: center center;
     text-align: center;
-    align-items: center;
     grid-column-start: 1;
     grid-row-start: 1;
     grid-column: span 4;
@@ -175,7 +173,7 @@ nav a:visited {
 .grid-item-sign div {
      width: 80vw;
      height:auto;
-     margin: 22vh auto;
+     margin: 16vh auto;
  }
  
 h1 {
