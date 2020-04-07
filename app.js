@@ -3,11 +3,14 @@ const   nodemailer  = require("nodemailer"),
         bodyParser  = require("body-parser"),
         express     = require("express"),
         ejs         = require("ejs"),
-        app         = express();
+        app         = express(),
+        http = require('http'),
+        enforce = require('express-sslify');
         require('dotenv').config();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(enforce.HTTPS());
 
 //body Parser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
