@@ -10,7 +10,7 @@ const   nodemailer  = require("nodemailer"),
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(enforce.HTTPS());
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 //body Parser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
