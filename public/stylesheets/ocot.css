@@ -57,9 +57,11 @@ body {
 }
 .navbar-links li {
     list-style: none;
+    position: relative;
     display: block;
     background: #ffffff;
     height: 100%;
+    margin: 0 1.5rem;
 }
 .navbar-links a {
     text-decoration: none;
@@ -68,7 +70,7 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem 0;
     cursor: pointer;
 }
 .navbar-links li a:last-of-type{
@@ -137,11 +139,11 @@ body {
     background-color: gray;
     border-radius: 10px;
 }
-nav a:link {
+a:link {
     text-decoration: none;
     color: black;
 }  
-nav a:visited {
+a:visited {
     text-decoration: none;
     color: black;
  }
@@ -423,7 +425,14 @@ button {
 #message {
      height: 15vh;
 }
-
+@media (max-width: 1200px){
+    .grid-item-sign div {
+        margin: 20vh auto;
+    }
+    h1 {
+        font-size: calc(6vh + 0.5vw);
+    }
+}
 @media (max-width: 800px) {
     .toggle-button {
         display: flex;
@@ -461,6 +470,9 @@ button {
     h1 {
         font-size: calc(6vh + 0.5vw);
     }
+    .grid-item-sign div {
+        margin: 22vh auto;
+    }
     .grid-item-sign h2 {
          font-size: 18px;
     }
@@ -490,4 +502,10 @@ button {
         padding: 0 10.2vw;
         margin-bottom: 1.5rem;
     }
+}
+@media (max-width:400px) {
+    .grid-item-sign div {
+        margin: 20vh auto;
+    }
+
 }
