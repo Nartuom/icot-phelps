@@ -11,9 +11,9 @@ const   nodemailer  = require("nodemailer"),
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(enforce.HTTPS({port:3000}));
-// { trustProtoHeader: true }
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
+//
 //body Parser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
@@ -93,14 +93,14 @@ app.post("/", function(req, res, next){
 });
 
 var url = process.env;
-// app.listen(process.env.PORT||3000, process.env.IP, function(){
-// 	console.log("Server Live at " + url);
-// });
+app.listen(process.env.PORT||3000, process.env.IP, function(){
+	console.log("Server Live at " + url);
+});
 
-https.createServer({
-    key: fs.readFileSync('../private-key.key'),
-    cert: fs.readFileSync('../rootSSL.pem')
-  }, app)
-  .listen(3000, function () {
-    console.log('Example app listening on port 3000! Go to https://localhost:3000/')
-  })
+// https.createServer({
+//     key: fs.readFileSync('../private-key.key'),
+//     cert: fs.readFileSync('../rootSSL.pem')
+//   }, app)
+//   .listen(3000, function () {
+//     console.log('Example app listening on port 3000! Go to https://localhost:3000/')
+//   })
