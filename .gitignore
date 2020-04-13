@@ -110,4 +110,4 @@ dist
 .env
 
 #app.js
-./app.js
+app.js
