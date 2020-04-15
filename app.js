@@ -60,7 +60,7 @@ app.get("*", function(req, res, next){
     let err = new Error(`${req.ip} tried to reach ${req.originalUrl}`);
     err.statusCode = 404;
     next(err);
-    res.redirect("/home");
+    res.redirect("/error");
 });
 
 //POST route form contact form
