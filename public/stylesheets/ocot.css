@@ -375,6 +375,9 @@ button {
      flex-basis:50%;
      padding: 0 1rem 2rem ;
 }
+.text-wrap img {
+    padding-top: 2rem;
+}
 .img-wrap {
     display: flex;
     flex-grow: 1;
@@ -386,6 +389,9 @@ button {
      object-fit: cover;
      height: 100%;
      width: 100%;
+}
+#indoor-img {
+    margin-top: 10rem;
 }
 
  /* FAQ page */
@@ -434,6 +440,9 @@ button {
     }
     #bannerName {
         font-size: calc(7vh + 0.5vw);
+    }
+    .img-wrap {
+        margin-top: 2rem;
     }
 }
 @media (max-width: 800px) {
