@@ -8,20 +8,20 @@
 
 <div class="grid-item about">
     <div class="form-wrap">
-        <form method="POST" action="/">
+        <form name="contactForm" method="POST" action="/" onsubmit="return validateForm()">
             <h1>Contact me</h1>
             <p>Please feel free to contact me via the form below, and I will get back to you as soon as possible.</p>
             <div class="field-wrap">
                 <label for="name"><strong>Name<abbr title="required" aria-label="required">*</abbr></strong></label><br>
-                <input id="name" type="text" name="user_name">
+                <input id="name" type="text" name="user_name" required>
             </div>
             <div class="field-wrap">
                 <label for="email"><strong>Email<abbr title="required" aria-label="required">*</abbr></strong></label><br>
-                <input id="email" type="text" name="user_email">
+                <input id="email" type="email" name="user_email" required>
             </div>
             <div>
                 <label for="message"><strong>Message<abbr title="required" aria-label="required">*</abbr></strong></label><br>
-                <input id="message" type="text" name="user_message">
+                <input id="message" type="text" name="user_message" required>
             </div>
             <button type="submit">Send</button>
         </form>    

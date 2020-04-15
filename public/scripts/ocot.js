@@ -33,3 +33,20 @@ function highlightNav(){
 }
 
 highlightNav();
+
+//Form validation
+function validateForm(){
+    let vName = document.forms["contactForm"]["user_name"].value;
+    let vEmail = document.forms["contactForm"]["user_email"].value;
+    let vMessage = document.forms["contactForm"]["user_message"].value;
+    if(vName == ""){
+        alert("Please fill in your name before submitting the contact form");
+        return false;
+    } else if(vEmail == ""){
+        alert("Please enter your email address before submitting the contact form");
+        return false;
+    } else if(vMessage == ""){
+        alert("Please enter a message before submiting the contact form");
+        return false;
+    }
+}
