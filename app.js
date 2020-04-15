@@ -4,14 +4,18 @@ const   nodemailer  = require("nodemailer"),
         express     = require("express"),
         ejs         = require("ejs"),
         app         = express(),
-        http = require('http'),
+        https = require('https'),
+        fs = require("fs"),
         enforce = require('express-sslify');
         require('dotenv').config();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
+app.use(enforce.HTTPS({trustProtoHeader: true }));
+
+
+//
 //body Parser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
@@ -22,35 +26,27 @@ app.get("/", function(req, res, next){
 app.get("/home", function(req, res, next){
     res.render("index");
 });
-
 app.get("/about", function(req, res){
     res.render("about");
 });
-
 app.get("/faq", function(req, res){
     res.render("faq");
 });
-
 app.get("/indoor", function(req, res){
     res.render("indoor")
 });
-
 app.get("/outdoor", function(req, res){
     res.render("outdoor")
 });
-
 app.get("/supervision", function(req, res){
     res.render("supervision");
 });
-
 app.get("/hypnobirthing", function(req, res){
     res.render("hypnobirthing");
 });
-
 app.get("/training", function(req, res){
     res.render("training");
 });
-
 app.get("/contact", function(req, res){
     res.render("contact");
 });
@@ -98,8 +94,15 @@ app.post("/", function(req, res, next){
         next(res.render("index")); 
 });
 
-
-var url = process.env.DATABASEURL;
+var url = process.env;
 app.listen(process.env.PORT||3000, process.env.IP, function(){
 	console.log("Server Live at " + url);
 });
+
+// https.createServer({
+//     key: fs.readFileSync('../private-key.key'),
+//     cert: fs.readFileSync('../rootSSL.pem')
+//   }, app)
+//   .listen(3000, function () {
+//     console.log('Example app listening on port 3000! Go to https://localhost:3000/')
+//   })
