@@ -83,7 +83,7 @@ body {
 }
 .dropdown {
     overflow: hidden;
-    height: inherit;
+    height: 100%;
 }
 .dropdown .dropbtn {
     border: none;
@@ -92,8 +92,10 @@ body {
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
     padding: inherit;
-    height: initial;
+    height: inherit;
+    align-self: center;
 }
+
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
@@ -230,7 +232,7 @@ p, li {
     align-items: center;
     height: auto;
     min-width: 250px;
-    width: 18%;
+    width: 22%;
     padding: 1rem 1rem;
     margin: 1rem 0.5rem;
  }
