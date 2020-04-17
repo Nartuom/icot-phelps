@@ -553,11 +553,20 @@ button {
     .grid-item-sign div {
         margin: 20vh auto;
     }
-    h1 {
+    #bannerName {
        font-size: 40px;
     }
     #bannerBlurb {
         font-size: 18px;
     }
-
+}
+@media (max-height:500px){
+    #bannerName {
+        padding-top: 1rem;
+        font-size: 26px;
+    }
+    #bannerBlurb {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }

@@ -99,13 +99,18 @@ app.post("/", function(req, res, next){
         main().catch(console.error);
 });
 var url = process.env;
+
+
+if(process.env.USERDOMAIN == "MARVIN"){
+https.createServer({
+    key: fs.readFileSync('../private-key.key'),
+    cert: fs.readFileSync('../rootSSL.pem')
+    }, app)
+    .listen(3000, function () {
+    console.log('Example app listening on port 3000! Go to https://localhost:3000/')
+      });
+  } else {
 app.listen(process.env.PORT||3000, process.env.IP, function(){
-	console.log("Server Live at " + url);
-});
-// https.createServer({
-//     key: fs.readFileSync('../private-key.key'),
-//     cert: fs.readFileSync('../rootSSL.pem')
-//   }, app)
-//   .listen(3000, function () {
-//     console.log('Example app listening on port 3000! Go to https://localhost:3000/')
-//   })
+    console.log("Server Live at " + process.env.IP);
+  });
+}
