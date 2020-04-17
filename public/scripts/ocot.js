@@ -1,17 +1,16 @@
 const toggleButton = document.getElementsByClassName("toggle-button")[0];
 const navbarLinks = document.getElementsByClassName("navbar-links")[0];
+const navbar = document.getElementsByClassName("navbar");
+const navbarLi = [...document.getElementsByClassName("navbarLi")];
 
 toggleButton.addEventListener("click", () => {
+    navbarLi.forEach(function(li){
+        li.classList.toggle("activeLi");
+    });
     navbarLinks.classList.toggle("active");
+    navbar[0].classList.toggle("responsiveNav");
 });
 
-navbarLinks.addEventListener("mouseleave", () =>{
-    if(navbarLinks.classList.contains("active")){
-        setTimeout(function() {
-            navbarLinks.classList.toggle("active");
-        }, 3000);
-    }
-});
 
 //hightlight navbar links when on page
 const links = [...navbarLinks.getElementsByTagName("a")];
