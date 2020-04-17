@@ -13,8 +13,6 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.use(enforce.HTTPS({trustProtoHeader: true }));
-
-
 //
 //body Parser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -50,6 +48,12 @@ app.get("/training", function(req, res){
 app.get("/contact", function(req, res){
     res.render("contact");
 });
+app.get("/confirmation", function(req, res){
+    res.render("confirmation");
+});
+app.get("/error", function(req, res){
+    res.render("error");
+})
 app.get("*", function(req, res, next){
     let err = new Error(`${req.ip} tried to reach ${req.originalUrl}`);
     err.statusCode = 404;
@@ -79,26 +83,25 @@ app.post("/", function(req, res, next){
         // send mail with defined transport object
         transporter.sendMail({
             from: email, // sender address
-            to: "thomas.burton.lawl@gmail.com", // list of receivers
+            to: "melphelps@live.co.uk", // list of receivers
             subject: "Client Enquiry", // Subject line
             html: message,
             }, function(error, info){
             if(error) {
                 console.log(error);
+                res.render("error"); 
             } else {
                 console.log("Message sent successfully:");
+                res.render("confirmation"); 
                 }
             });
         }   
         main().catch(console.error);
-        next(res.render("index")); 
 });
-
 var url = process.env;
 app.listen(process.env.PORT||3000, process.env.IP, function(){
 	console.log("Server Live at " + url);
 });
-
 // https.createServer({
 //     key: fs.readFileSync('../private-key.key'),
 //     cert: fs.readFileSync('../rootSSL.pem')

@@ -1,17 +1,16 @@
 const toggleButton = document.getElementsByClassName("toggle-button")[0];
 const navbarLinks = document.getElementsByClassName("navbar-links")[0];
+const navbar = document.getElementsByClassName("navbar");
+const navbarLi = [...document.getElementsByClassName("navbarLi")];
 
 toggleButton.addEventListener("click", () => {
+    navbarLi.forEach(function(li){
+        li.classList.toggle("activeLi");
+    });
     navbarLinks.classList.toggle("active");
+    navbar[0].classList.toggle("responsiveNav");
 });
 
-navbarLinks.addEventListener("mouseleave", () =>{
-    if(navbarLinks.classList.contains("active")){
-        setTimeout(function() {
-            navbarLinks.classList.toggle("active");
-        }, 3000);
-    }
-});
 
 //hightlight navbar links when on page
 const links = [...navbarLinks.getElementsByTagName("a")];
@@ -33,3 +32,20 @@ function highlightNav(){
 }
 
 highlightNav();
+
+//Form validation
+function validateForm(){
+    let vName = document.forms["contactForm"]["user_name"].value;
+    let vEmail = document.forms["contactForm"]["user_email"].value;
+    let vMessage = document.forms["contactForm"]["user_message"].value;
+    if(vName == ""){
+        alert("Please fill in your name before submitting the contact form");
+        return false;
+    } else if(vEmail == ""){
+        alert("Please enter your email address before submitting the contact form");
+        return false;
+    } else if(vMessage == ""){
+        alert("Please enter a message before submiting the contact form");
+        return false;
+    }
+}
