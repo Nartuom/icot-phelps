@@ -38,6 +38,10 @@ body {
     padding: 0 13.2vw;
     z-index: 1;
 }
+.responsiveNav {
+    height: 100vh;
+    transition: ease-in-out 0.5s;
+}
 #brand-title {
     font-family: 'pecitamedium';
     font-size: 32px;
@@ -53,24 +57,27 @@ body {
     padding: 0;
     display: flex;
     flex: 1;
-    height: 100%;   
+    height: 100%;
+    align-items: center;   
 }
-.navbar-links li {
+.navbarLi {
     list-style: none;
     display: flex;
-    flex: 1;
     background: #ffffff;
-    height: 100%;
+    height: 60px;
     margin: 0 1.5rem;
+    transition: all 4s ease-in;
 }
 .navbar-links a {
     position: relative;
     display: flex;
     width: 120px;
     text-decoration: none;
+    text-align: center;
     white-space: nowrap;
-    height: 100%;
+    height: inherit;
     padding: 1em 1em;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
@@ -95,7 +102,6 @@ body {
     height: inherit;
     align-self: center;
 }
-
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
@@ -111,7 +117,6 @@ body {
     margin: 0;
     width: 100%;
 }
-
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
@@ -123,11 +128,12 @@ body {
 }
 .toggle-button {
     position: absolute;
-    top: 1rem;
+    top: 0.5rem;
     right: 1rem;
     display: none;
     flex-direction: column;
     justify-content: space-between;
+    align-self: center;
     width: 30px;
     height: 24px;
     z-index: 2;
@@ -139,7 +145,6 @@ body {
     background-color: gray;
     border-radius: 10px;
 }
-
 a:link {
     text-decoration: none;
     color: black;
@@ -188,6 +193,7 @@ a:visited {
  }
  #bannerBlurb {
     font-size: 26px;
+    margin: 0;
 }
 h1 {
     font-size: 60px;
@@ -452,8 +458,9 @@ button {
         display: flex;
     }
     .navbar-links {
-        display: none;
-        width: 100%;
+        height: 0px;
+        transition: 0.5s;
+	    transition-timing-function: ease-in-out;
     }
     .navbar {
         flex-direction: column;
@@ -467,26 +474,38 @@ button {
         position:absolute;
         top:72px;
         left:0;
+        height: 0px;
     }
+    
     .dropdown {
         width: 100%;
     }
-    .navbar-links li {
+    .navbarLi {
+        left: 0;
+        position: relative;
         text-align: center;
         width: 100%;
+        height: 0px;
+        opacity: 0;
+        transition: all 0.5s ease;
     }
+    .activeLi {
+        opacity: 1;
+        height: 60px;
+    }
+   
     .navbar-links a {
         width: 100%;
     }
+   
     .navbar-links.active {
-        display: flex;
+        display: block;
+        height: 60px;
+        width: 100vw;   
     }
     .navbar-links li a:hover {
         background-color: rgba(122, 122, 122, 0.5);
     }
-    .navbar-links li:last-of-type{
-        margin-right: 0;
-    } 
     #bannerName {
         font-size: 80px;
     }

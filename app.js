@@ -98,12 +98,10 @@ app.post("/", function(req, res, next){
         }   
         main().catch(console.error);
 });
-
 var url = process.env;
 app.listen(process.env.PORT||3000, process.env.IP, function(){
 	console.log("Server Live at " + url);
 });
-
 // https.createServer({
 //     key: fs.readFileSync('../private-key.key'),
 //     cert: fs.readFileSync('../rootSSL.pem')
