@@ -223,6 +223,7 @@ h5 {
 }
 p, li {
     line-height: 25px;
+    margin: 0;
 }
 .skills-container {
      display: inline-flex;
@@ -239,8 +240,8 @@ p, li {
     height: auto;
     min-width: 250px;
     width: 22%;
-    padding: 1rem 1rem;
-    margin: 1rem 0.5rem;
+    padding: 0.5rem 0.5rem;
+    margin: 1rem 0.5rem 2rem;
  }
 .skills img {
      height: 75px;
@@ -249,10 +250,14 @@ p, li {
 }
 .skills h2 {
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
-    height: 5rem;
     font-size: 26px;
+    height: 5em;
+    padding: 0 1rem;
+    margin:  0 0.5rem 0.5rem;
+
 }
 .skills a {
     display: block;
@@ -357,12 +362,15 @@ button {
      border-radius: 4px;
 }
 
- /* About Page */
+ /* Information Pages */
 .grid-item.banner {
      width: 100vw;
      height: 36vh;
      grid-column: span 4;
      grid-row: auto;
+}
+#outdoorH1 {
+    font-size: 55px;
 }
 .grid-item.banner img {
      width: 100vw;
@@ -371,11 +379,10 @@ button {
 }
 .grid-item.about {
      grid-column: span 4;
-     display: inline-flex;
+     display: flex;
      flex-wrap: wrap;
      flex-grow: 1;
      margin: 2rem 10.2vw;
-     justify-content: space-evenly;
 }
 .text-wrap {
      display:flex;
@@ -511,6 +518,11 @@ button {
     }
     h1 {
         font-size: 40px;
+        margin-bottom: 1rem;
+    }
+    #outdoorH1 {
+        font-size: 30px;
+        margin-bottom: 1rem;
     }
     h2 {
         font-size: 30px;
@@ -535,9 +547,6 @@ button {
         margin: 1.5rem 0;
         padding: 0 1.5rem;
     }
-    .text-wrap {
-        padding: 0;
-    }
     .grid-item.testimony{
         grid-column: span 4;
     }
@@ -559,7 +568,11 @@ button {
     #bannerBlurb {
         font-size: 18px;
     }
+    .skills-container {
+        margin-top: 2rem;
+    }
 }
+
 @media (max-height:500px){
     #bannerName {
         padding-top: 1rem;
@@ -569,4 +582,5 @@ button {
         font-size: 12px;
         line-height: 15px;
     }
+   
 }
