@@ -60,7 +60,7 @@ body {
     list-style: none;
     display: flex;
     background: #ffffff;
-    height: 60px;
+    height: 72px;
     margin: 0 1.5rem;
 }
 .navbar-links a {
@@ -199,6 +199,7 @@ h2{
     font-size: 60px;
     font-weight: 400;
     margin:0;
+    padding: 1rem 0.5rem;
 }
 h3 {
     font-size: 22px;
