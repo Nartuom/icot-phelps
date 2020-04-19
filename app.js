@@ -54,12 +54,7 @@ app.get("/confirmation", function(req, res){
 app.get("/error", function(req, res){
     res.render("error");
 })
-app.get("*", function(req, res, next){
-    let err = new Error(`${req.ip} tried to reach ${req.originalUrl}`);
-    err.statusCode = 404;
-    next(err);
-    res.redirect("/home");
-});
+
 
 //POST route form contact form
 app.post("/", function(req, res, next){
@@ -98,9 +93,18 @@ app.post("/", function(req, res, next){
         }   
         main().catch(console.error);
 });
+
+app.get("*", function(req, res, next){
+    fs.readFile("/file-does-not-exist", function(err, data){
+        if(err){
+            let err = new Error(`Someone tried to reach ${req.originalUrl}`);
+            res.status(404).render("error");
+            next(err);
+        } 
+    })
+});
+
 var url = process.env;
-
-
 if(process.env.USERDOMAIN == "MARVIN"){
 https.createServer({
     key: fs.readFileSync('../private-key.key'),
