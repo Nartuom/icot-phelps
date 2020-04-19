@@ -101,6 +101,7 @@ app.get("*", function(req, res, next){
             res.status(404).render("error");
             next(err);
         } 
+        res.render("home");
     })
 });
 
