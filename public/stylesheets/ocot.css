@@ -60,7 +60,7 @@ body {
     list-style: none;
     display: flex;
     background: #ffffff;
-    height: 60px;
+    height: 72px;
     margin: 0 1.5rem;
 }
 .navbar-links a {
@@ -199,6 +199,7 @@ h2{
     font-size: 60px;
     font-weight: 400;
     margin:0;
+    padding: 1rem 0.5rem;
 }
 h3 {
     font-size: 22px;
@@ -341,6 +342,9 @@ button:hover {
      line-height: 2em;
      padding: 4rem 2rem;
 }
+.contact p {
+    margin: 1rem 1rem;
+}
 .grid-item-footer {
      grid-column: span 4;
      grid-row: span 1;
@@ -415,9 +419,8 @@ button {
  /* Contact Page */
 .form-wrap {
     display:flex;
-    min-width: 360px;
+    min-width: 300px;
     width: 22vw;
-    min-width: 360px;
     padding:0 1rem 0 0;
     flex-grow: 1;
  }
@@ -429,7 +432,7 @@ button {
      flex-grow:1;
  }
 .contact-wrap {
-     min-width: 360px;
+     min-width: 300px;
      width: 14vw;
      flex-grow: 1;
 }
