@@ -38,8 +38,9 @@ p {
     font-size: 18px;
     text-transform: uppercase;
     margin: 0 0;
-    padding: 0 13.2vw;
+    padding: 0 10.2vw;
     z-index: 1;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.2);
 }
 
 #brand-title {
@@ -56,6 +57,7 @@ p {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-items: space-between;
     height: 100%;
     align-items: center;   
 }
@@ -64,18 +66,15 @@ p {
     display: flex;
     background: #ffffff;
     height: 72px;
-    margin: 0 1.5rem;
 }
 .navbar-links a {
     position: relative;
     display: flex;
     width: 120px;
     text-decoration: none;
-    text-align: center;
     white-space: nowrap;
     height: inherit;
-    padding: 1em 1em;
-    justify-content: center;
+    padding: 1em 20px;
     align-items: center;
     cursor: pointer;
 }
@@ -99,6 +98,12 @@ p {
     padding: inherit;
     height: inherit;
     align-self: center;
+}
+.dropbtn img {
+    width: 16px;
+    height: 8px;
+    margin: 0 2.5px;
+    color: #707070;
 }
 /* Dropdown content (hidden by default) */
 .dropdown-content {
@@ -205,7 +210,7 @@ h2{
     font-size: 60px;
     font-weight: 400;
     margin:0;
-    padding: 1rem 0.5rem;
+    padding: 1rem 0;
     text-align: left;
 }
 h3 {
@@ -297,11 +302,10 @@ button:hover {
 }
 .hello-wrap {
     margin-left: 10.2vw;
-    padding: 3rem 4rem 3rem;
+    padding: 3em 2em 3em 0;
     align-items: center;
 }
 .hello-wrap p {
-    padding: 0 0.5em 0;
     margin: 0;
     line-height: 25px;
     text-align: left;
@@ -311,7 +315,7 @@ button:hover {
 }
 .portrait{
     display:flex;
-    flex-basis: 50%;
+    flex-basis: 40%;
     flex-grow: 1;
     flex-shrink: 3;
     grid-row: span 2;
@@ -377,16 +381,19 @@ button {
 
  /* Information Pages */
 .grid-item.banner {
-     width: 100vw;
-     height: 36vh;
-     grid-column: span 4;
-     grid-row: auto;
+    width: 100vw;
+    height: 28vh;
+    grid-column: span 4;
+    grid-row: auto;
+    transform: translateY(72px);
+    position: relative;
+    margin-bottom: 4rem;
 }
 #outdoorH1 {
     font-size: 55px;
 }
 .grid-item.banner img {
-     width: 100vw;
+     width: 100%;
      height: 100%;
      object-fit: cover;
 }
@@ -401,7 +408,7 @@ button {
      display:flex;
      flex-grow: 1;
      flex-basis:50%;
-     padding: 0 1rem 2rem ;
+     padding: 0 1rem 2rem 0 ;
 }
 .text-wrap img {
     padding-top: 2rem;
@@ -433,11 +440,15 @@ button {
     display:flex;
     min-width: 300px;
     width: 22vw;
-    padding:0 1rem 0 0;
+    padding:0 4rem 0 0;
     flex-grow: 1;
  }
  .form-wrap h2 {
      padding-bottom: 0.5em;
+ }
+ .form-wrap p {
+     font-size: 26px;
+     padding: 1rem 0;
  }
  form {
      width: 22vw;
@@ -447,9 +458,14 @@ button {
      min-width: 300px;
      width: 14vw;
      flex-grow: 1;
+     margin-top: 6.5rem;
+}
+.contact-wrap p {
+    margin: 1em 0;
 }
 .form-wrap input {
-     width: 90%;
+     width: 100%;
+     height: 45px;
      flex-grow: 1;
      padding: 5px 5px;
      border: 1px solid #7B7B7B;
@@ -460,6 +476,9 @@ button {
      height: 15vh;
 }
 @media (max-width: 1200px){
+    .grid-item-sign{
+        height: 65vh;
+    }
     .grid-item-sign div {
         margin: 20vh auto;
     }
@@ -470,7 +489,8 @@ button {
         margin-top: 2rem;
     }
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px){
+    /* Responsive Navbar Stylings */
     .responsiveNav {
         height: 100vh;
         transition: 0.5s ease-in-out;
@@ -499,7 +519,9 @@ button {
         left:0;
         height: 0px;
     }
-    
+    .navbar-links a {
+        justify-content: center;
+    }
     .dropdown {
         width: 100%;
     }
@@ -566,6 +588,19 @@ button {
     .navbar-links li a:hover {
         background-color: rgba(122, 122, 122, 0.5);
     }
+    .dropdown-content{
+        width: 100%;
+        text-align:center;
+    }
+    .dropdown-content:hover #burger-fix {
+        display: block;
+    }
+}
+@media (max-width: 800px) {
+    
+    .grid-item-sign{
+        height: 60vh;
+    }
     #bannerName {
         font-size: 80px;
     }
@@ -588,13 +623,6 @@ button {
     }
     h4 {
         font-size: calc(2vh + 0.5vw);
-    }
-    .dropdown-content{
-        width: 100%;
-        text-align:center;
-    }
-    .dropdown-content:hover #burger-fix {
-        display: block;
     }
     .hello-wrap {
         margin: 1.5rem 0;
