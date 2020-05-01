@@ -366,11 +366,17 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     background: #3A7C91;
     color: #ffffff;
+    font-size: 14px;
     font-weight: 400;
-    padding: 1.5em;
+    padding: 0.5em;
     height: 72px;
+}
+.grid-item-footer a {
+    text-decoration: none;
+    color: #ffffff;
 }
 button {
      padding: 0.4rem 0.4rem;
@@ -663,6 +669,9 @@ button {
     }
     .skills-container {
         margin-top: 2rem;
+    }
+    .grid-item-footer {
+        font-size: 12px;
     }
 }
 
