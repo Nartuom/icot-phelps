@@ -70,12 +70,13 @@ p {
 .navbar-links a {
     position: relative;
     display: flex;
-    width: 120px;
+    width: fit-content;
     text-decoration: none;
     white-space: nowrap;
     height: inherit;
     padding: 1em 20px;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 .navbar-links li a:last-of-type{
@@ -176,6 +177,7 @@ a:visited {
     background-repeat: no-repeat;
     background-position: center center;
     text-align: center;
+    justify-content: center;
     grid-column-start: 1;
     grid-row-start: 1;
     grid-column: span 4;
@@ -184,10 +186,11 @@ a:visited {
     height: 68vh;
     max-height: 68vh;
 }
-.grid-item-sign div {
-     width: 80vw;
-     height:auto;
-     margin: 16vh auto;
+#bannerWrap {
+     height:fit-content;
+     width: fit-content;
+     padding: 1rem 0.25rem 4rem;
+     align-self: center;
  }
 #bannerName {
     font-family: 'pecitamedium';
@@ -237,9 +240,9 @@ p, li {
      display: inline-flex;
      grid-column: span 4;
      grid-row: 3;
-     justify-content: center;
+     justify-content: space-between;
      flex-wrap: wrap;
-     margin: 10.2vh 13.2vw;
+     margin: 10.2vh 10vw;
      padding: 0;
 }
 .skills {
@@ -264,7 +267,6 @@ p, li {
     height: 4.5em;
     padding: 1rem 1rem;
     margin:  0 0.5rem 0.5rem;
-
 }
 .skills a {
     display: block;
@@ -282,7 +284,6 @@ p, li {
     text-align: center;
     justify-content: center;  
 }
-
 button {
     font-size: 18px;
 }
@@ -302,13 +303,16 @@ button:hover {
 }
 .hello-wrap {
     margin-left: 10.2vw;
-    padding: 3em 2em 3em 0;
+    padding: 3em 5em 3em 0;
     align-items: center;
+}
+.hello-wrap h2 {
+    text-align: center;
 }
 .hello-wrap p {
     margin: 0;
     line-height: 25px;
-    text-align: left;
+    text-align: center;
 }
 .hello-wrap img {
     padding: 2rem 0.5em;
@@ -326,7 +330,6 @@ button:hover {
      height: 100%;
      object-fit:  cover;
      align-self: center;
-
 }
 .grid-item.testimony {
      background-color: #D5E7EB;
@@ -377,6 +380,9 @@ button:hover {
 .grid-item-footer a {
     text-decoration: none;
     color: #ffffff;
+}
+.grid-item-footer a:hover {
+    text-decoration: underline;
 }
 button {
      padding: 0.4rem 0.4rem;
@@ -488,11 +494,17 @@ button {
     .grid-item-sign div {
         margin: 20vh auto;
     }
+    .skills-container {
+        justify-content: center;
+    }
     #bannerName {
         font-size: calc(7vh + 0.5vw);
     }
     .img-wrap {
         margin-top: 2rem;
+    }
+    .portrait {
+        flex-basis: 100vw;
     }
 }
 @media (max-width: 1000px){
@@ -601,23 +613,9 @@ button {
     .dropdown-content:hover #burger-fix {
         display: block;
     }
+
 }
 @media (max-width: 800px) {
-    
-    .grid-item-sign{
-        height: 60vh;
-    }
-    #bannerName {
-        font-size: 80px;
-    }
-    h1 {
-        font-size: 40px;
-        margin-bottom: 1rem;
-    }
-    #outdoorH1 {
-        font-size: 30px;
-        margin-bottom: 1rem;
-    }
     h2 {
         font-size: 30px;
     }
