@@ -9,7 +9,7 @@
 <div class="grid-item about">
     <div class="form-wrap">
         <form name="contactForm" method="POST" action="/" onsubmit="return validateForm()">
-            <h1>Contact me</h1>
+            <h1 class="smallerH1">Contact me</h1>
             <p>Send me a message</p>
             <div class="field-wrap">
                 <label for="name"><strong>Name<abbr title="required" aria-label="required">*</abbr></strong></label><br>
@@ -21,9 +21,9 @@
             </div>
             <div>
                 <label for="message"><strong>Message<abbr title="required" aria-label="required">*</abbr></strong></label><br>
-                <input id="message" type="text" name="user_message" required>
+                <textarea id="message" type="textarea" name="user_message" required></textarea>
             </div>
-            <button type="submit">Send</button>
+            <button id="contactBut" type="submit">Send</button>
         </form>    
     </div>
 
