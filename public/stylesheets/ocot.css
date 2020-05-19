@@ -340,19 +340,48 @@ button:hover {
      grid-row: span 1;
      height: 28em;
 }
-.testimony img {
+.testimony.tPage {
+    background-color: white;
+    height: fit-content;
+}
+.testimony.tPageBlue {
+    background-color: #D5E7EB;
+    height: 32em;
+}
+.tPage.lrgLeft {
+    grid-row: span 3;
+}
+.quote-img {
     opacity: 0.8;
-    height: 75px;
+    height: 90px;
     width: auto;
-    padding-bottom: 1rem;
+    padding: 1rem 1rem;
 }
-#left-test {
-    margin: 4em 4em 0 10.2vw;
+.white {
+    mix-blend-mode: color-dodge;
 }
-#right-test {
-    margin: 4em 10.2vw 0 4em;  
+.grid-item.span-test {
+    display: flex;
+    grid-column: span 4;
+    grid-row: span 1;
+    margin: 2rem 10.2vw 0 ;
+    text-align: left;
 }
-
+.left-test {
+    margin: 2rem 4em 2rem 10.2vw;
+}
+.right-test {
+    margin: 2rem 10.2vw 2rem 4em;  
+}
+.left-test.tPage {
+    text-align: left;
+}
+.right-test.tPage {
+    text-align: left;
+}
+.testimony.tPage:last-of-type {
+    margin-bottom: 8rem;
+}
 .grid-item.contact {
      grid-column: span 4;
      grid-row: span 1;
@@ -531,7 +560,7 @@ button {
         padding: 2rem 0 2rem;
         height: fit-content;
     }
-    #left-test, #right-test {
+    .left-test, .right-test {
         height: fit-content;
         margin: 2em 10.2vw;
     }

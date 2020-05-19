@@ -48,13 +48,15 @@ app.get("/training", function(req, res){
 app.get("/contact", function(req, res){
     res.render("contact");
 });
+app.get("/testimony", function(req, res){
+    res.render("testimony");
+});
 app.get("/confirmation", function(req, res){
     res.render("confirmation");
 });
 app.get("/error", function(req, res){
     res.render("error");
 })
-
 
 //POST route form contact form
 app.post("/", function(req, res, next){
@@ -101,7 +103,7 @@ app.get("*", function(req, res, next){
             res.status(404).render("error");
             next(err);
         } 
-        res.render("home");
+        res.render("index");
     })
 });
 
