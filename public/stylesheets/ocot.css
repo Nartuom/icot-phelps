@@ -358,7 +358,6 @@ button:hover {
     text-align: center;
     margin: 0;
     justify-content: center;
-
 }
 .quote-img {
     opacity: 0.8;
@@ -373,14 +372,16 @@ button:hover {
     display: flex;
     grid-column: span 4;
     grid-row: span 1;
-    margin: 2rem 10.2vw 0;
+    margin: 4rem 10.2vw 0;
     text-align: left;
 }
 .left-test {
     margin: 2rem 4em 2rem 10.2vw;
+    height: fit-content;
 }
 .right-test {
-    margin: 2rem 10.2vw 2rem 4em;  
+    margin: 2rem 10.2vw 2rem 4em;
+    height: fit-content;  
 }
 .left-test.tPage {
     text-align: left;
@@ -544,6 +545,10 @@ button {
      max-width: 500px;
      max-height: 800px;
      margin-top: 0.5em;
+}
+
+.noMargin {
+    margin-bottom: 0;
 }
 @media (max-width: 1200px){
     .grid-item-sign{
