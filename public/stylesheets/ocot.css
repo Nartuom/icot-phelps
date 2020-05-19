@@ -172,7 +172,7 @@ a:visited {
 }
 .grid-item-sign {
     display:flex;
-    background-image: url("/assets/home-banner.png");
+    background-image: url("/assets/home-bannerC.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
