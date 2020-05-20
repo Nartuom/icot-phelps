@@ -434,6 +434,20 @@ button {
     border-radius: 4px;
     font-family: "Poppins", sans-serif;
 }
+.button {
+    width:fit-content;
+    padding: 0.4rem 0.4rem;
+    background: white;
+    border: 2px solid #7B7B7B;
+    border-radius: 4px;
+    font-family: "Poppins", sans-serif;
+}
+.button:hover {
+    color: #3A7C91;
+    background: #ffffff;
+    border-color: #3A7C91;
+    cursor: pointer;
+}
 #contactBut {
     width: 70px;
     height: 45px;
