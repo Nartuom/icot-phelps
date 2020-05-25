@@ -8,6 +8,8 @@ const   nodemailer  = require("nodemailer"),
         fs = require("fs"),
         enforce = require('express-sslify');
         require('dotenv').config();
+const Recaptcha = require('express-recaptcha').RecaptchaV3;
+const recaptcha = new Recaptcha('6Ld37vsUAAAAAFg4JSfU7ciYEDUA_pdu3K5IWiNh', process.env.SECRET_KEY, {callback:"cb"});
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -15,7 +17,7 @@ app.use(express.static("public"));
 app.use(enforce.HTTPS({trustProtoHeader: true }));
 //
 //body Parser middleware
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
 app.get("/", function(req, res, next){
@@ -45,8 +47,8 @@ app.get("/hypnobirthing", function(req, res){
 app.get("/training", function(req, res){
     res.render("training");
 });
-app.get("/contact", function(req, res){
-    res.render("contact");
+app.get("/contact", recaptcha.middleware.render, function(req, res){
+    res.render("contact", { captcha:res.recaptcha });
 });
 app.get("/testimony", function(req, res){
     res.render("testimony");
@@ -59,41 +61,44 @@ app.get("/error", function(req, res){
 })
 
 //POST route form contact form
-app.post("/", function(req, res, next){
-    async function main() {
-
-        const email = `${req.body.user_email}`;
-        const name  = `${req.body.user_name}`;
-        const message = 
-            `<div><h3>New message from:</h3>${email}</div> 
-            <div><h4>Name:</h4> ${name} </div>
-            <div><h5>Message:</h5> ${req.body.user_message}</div>`      
-            ;
-        
-        //Nodemailer route fror emails
-        const transporter = nodemailer.createTransport(
-            nodemailerSendgrid({
-                apiKey: process.env.SENDGRID_API_KEY,
-            })
-        );
-
-        // send mail with defined transport object
-        transporter.sendMail({
-            from: email, // sender address
-            to: "melphelps@live.co.uk", // list of receivers
-            subject: "Client Enquiry", // Subject line
-            html: message,
-            }, function(error, info){
-            if(error) {
-                console.log(error);
-                res.render("error"); 
-            } else {
-                console.log("Message sent successfully:");
-                res.render("confirmation"); 
-                }
-            });
-        }   
-        main().catch(console.error);
+app.post("/", recaptcha.middleware.verify, function(req, res, next){
+    if (!req.recaptcha.error) {
+        // success code
+        async function main() {
+            const email = `${req.body.user_email}`;
+            const name  = `${req.body.user_name}`;
+            const message = 
+                `<div><h3>New message from:</h3>${email}</div> 
+                <div><h4>Name:</h4> ${name} </div>
+                <div><h5>Message:</h5> ${req.body.user_message}</div>`      
+                ; 
+            //Nodemailer route fror emails
+            const transporter = nodemailer.createTransport(
+                nodemailerSendgrid({
+                    apiKey: process.env.SENDGRID_API_KEY,
+                })
+            );
+            // send mail with defined transport object
+            transporter.sendMail({
+                from: email, // sender address
+                to: "melphelps@live.co.uk", // list of receivers
+                subject: "Client Enquiry", // Subject line
+                html: message,
+                }, function(error, info){
+                if(error) {
+                    console.log(error);
+                    res.render("error"); 
+                } else {
+                    console.log("Message sent successfully:");
+                    res.render("confirmation"); 
+                    }
+                });
+            }   
+            main().catch(console.error);
+      } else {
+        // error code
+        res.render("error");
+      }   
 });
 
 app.get("*", function(req, res, next){
