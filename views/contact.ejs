@@ -8,7 +8,7 @@
 
 <div class="grid-item about">
     <div class="form-wrap">
-        <form name="contactForm" method="POST" action="/" onsubmit="return validateForm()">
+        <form name="contactForm" id="contactForm" method="POST" action="/contact">
             <h1 class="smallerH1">Contact me</h1>
             <p>Send me a message</p>
             <div class="field-wrap">
@@ -25,14 +25,18 @@
             </div>
             <button 
                 id="contactBut" 
-                type="submit"
                 class="g-recaptcha" 
                 data-sitekey="6Ld37vsUAAAAAFg4JSfU7ciYEDUA_pdu3K5IWiNh" 
                 data-callback='onSubmit' 
                 data-action='submit'
-            
             >Send</button>
-        </form>    
+            <div id="captchaDiv">
+                This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </div>	 
+        </form>
+           
     </div>
 
     <div class="contact-wrap">

@@ -8,8 +8,9 @@ const   nodemailer  = require("nodemailer"),
         fs = require("fs"),
         enforce = require('express-sslify');
         require('dotenv').config();
-const Recaptcha = require('express-recaptcha').RecaptchaV3;
-const recaptcha = new Recaptcha('6Ld37vsUAAAAAFg4JSfU7ciYEDUA_pdu3K5IWiNh', process.env.SECRET_KEY, {callback:"cb"});
+
+var Recaptcha = require('express-recaptcha').RecaptchaV3;
+var recaptcha = new Recaptcha('6Ld37vsUAAAAAFg4JSfU7ciYEDUA_pdu3K5IWiNh', process.env.SECRET_KEY, {callback:"cb"});
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -61,7 +62,7 @@ app.get("/error", function(req, res){
 })
 
 //POST route form contact form
-app.post("/", recaptcha.middleware.verify, function(req, res, next){
+app.post("/contact", recaptcha.middleware.verify, function(req, res, next){
     if (!req.recaptcha.error) {
         // success code
         async function main() {
