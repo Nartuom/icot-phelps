@@ -23,7 +23,15 @@
                 <label for="message"><strong>Message<abbr title="required" aria-label="required">*</abbr></strong></label><br>
                 <textarea id="message" type="textarea" name="user_message" required></textarea>
             </div>
-            <button id="contactBut" type="submit">Send</button>
+            <button 
+                id="contactBut" 
+                type="submit"
+                class="g-recaptcha" 
+                data-sitekey="6Ld37vsUAAAAAFg4JSfU7ciYEDUA_pdu3K5IWiNh" 
+                data-callback='onSubmit' 
+                data-action='submit'
+            
+            >Send</button>
         </form>    
     </div>
 
