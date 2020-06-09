@@ -91,6 +91,7 @@ p {
 .navbar-links li a:hover {
     color: #3A7C91;
     font-weight: 600;
+    transform: translateY(-1px);
 }
 .dropdown {
     overflow: hidden;
@@ -290,15 +291,6 @@ p, li {
     text-align: center;
     justify-content: center;  
 }
-button {
-    font-size: 18px;
-}
-button:hover {
-    color: #3A7C91;
-    background: #ffffff;
-    border-color: #3A7C91;
-    cursor: pointer;
-}
 .hello{
     display:flex;
     flex-basis: 50%;
@@ -433,12 +425,20 @@ button:hover {
     text-decoration: underline;
 }
 button {
+    font-size: 18px;
     width:fit-content;
     padding: 0.4rem 0.4rem;
     background: white;
     border: 2px solid #7B7B7B;
     border-radius: 4px;
     font-family: "Poppins", sans-serif;
+}
+button:hover {
+    color: #3A7C91;
+    background: #ffffff;
+    border-color: #3A7C91;
+    cursor: pointer;
+    transform: translateY(-1px);
 }
 .button {
     width:fit-content;
@@ -453,6 +453,7 @@ button {
     background: #ffffff;
     border-color: #3A7C91;
     cursor: pointer;
+    transform: translateY(-1px);
 }
 #contactBut {
     width: 70px;
@@ -511,13 +512,11 @@ button {
 #indoor-img {
     margin-top: 11rem;
 }
-
  /* FAQ page */
 .about a {
     color: #3A7C91;
     text-decoration: #3A7C91;
 }
-
  /* Contact Page */
 .form-wrap {
     display:flex;
@@ -566,10 +565,11 @@ button {
      max-height: 800px;
      margin-top: 0.5em;
 }
-
 .noMargin {
     margin-bottom: 0;
 }
+
+/* Media Queries */
 @media (max-width: 1200px){
     .grid-item-sign{
         height: 65vh;
