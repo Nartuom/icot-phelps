@@ -735,6 +735,8 @@ button:hover {
     }
     #bannerBlurb{
          font-size: 26px;
+         padding: 0 1rem;
+         text-align: center;
     }
     h4 {
         font-size: calc(2vh + 0.5vw);
