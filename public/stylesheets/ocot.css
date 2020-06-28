@@ -336,7 +336,7 @@ p, li {
      text-align: center;
      grid-column: span 2;
      grid-row: span 1;
-     height: 25em;
+     height: inherit;
 }
 .testimony.tPage {
     background-color: white;
@@ -344,7 +344,7 @@ p, li {
 }
 .testimony.tPageBlue {
     background-color: #D5E7EB;
-    height: 32em;
+    height: auto;
 }
 .tPage.lrgLeft {
     grid-row: span 3;
@@ -356,6 +356,7 @@ p, li {
     text-align: center;
     margin: 0;
     justify-content: center;
+    align-items: flex-end;
 }
 .quote-img {
     opacity: 0.8;
@@ -372,6 +373,7 @@ p, li {
     grid-row: span 1;
     padding: 4rem 10.2vw 2rem;
     text-align: center;
+    justify-content: center;
 }
 .span-test.blue {
     background-color: #D5E7EB;
@@ -379,6 +381,7 @@ p, li {
 .start {
     justify-items: center ;
     text-align: center !important;
+    padding-top: 0 !important;
 }
 .end {
     padding-bottom: 8rem !important;
@@ -773,6 +776,10 @@ button:hover {
     .grid-item-footer {
         font-size: 12px;
     }
+
+    .left-test.tPage p, .right-test.tPage p{
+        text-align: center !important;
+    }   
 }
 
 @media (max-height:500px){
