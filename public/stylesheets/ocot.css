@@ -336,7 +336,7 @@ p, li {
      text-align: center;
      grid-column: span 2;
      grid-row: span 1;
-     height: 20em;
+     height: 25em;
 }
 .testimony.tPage {
     background-color: white;
@@ -351,7 +351,7 @@ p, li {
 }
 #testiButton {
     display: flex;
-    height: 8em;
+    height: 5em;
     background-color: #D5E7EB;
     text-align: center;
     margin: 0;
@@ -370,8 +370,18 @@ p, li {
     display: flex;
     grid-column: span 4;
     grid-row: span 1;
-    margin: 4rem 10.2vw 0;
-    text-align: left;
+    padding: 4rem 10.2vw 2rem;
+    text-align: center;
+}
+.span-test.blue {
+    background-color: #D5E7EB;
+}
+.start {
+    justify-items: center ;
+    text-align: center !important;
+}
+.end {
+    padding-bottom: 8rem !important;
 }
 .left-test {
     margin: 2rem 4em 2rem 10.2vw;
@@ -385,6 +395,9 @@ p, li {
     text-align: left;
 }
 .right-test.tPage {
+    text-align: right;
+}
+.tPage p {
     text-align: left;
 }
 .testimony.tPage:last-of-type {
@@ -509,7 +522,7 @@ button:hover {
      height: 100%;
      width: 100%;
 }
-#indoor-img {
+#extra-margin-img {
     margin-top: 11rem;
 }
  /* FAQ page */
