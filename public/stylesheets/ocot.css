@@ -142,22 +142,23 @@ p {
 }
 .toggle-button {
     position: absolute;
-    top: 0.5rem;
+    top: 12px;
     right: 1rem;
     display: none;
     flex-direction: column;
     justify-content: space-between;
     align-self: center;
     width: 30px;
-    height: 24px;
     z-index: 2;
     margin: 1rem 5.2vw 0 0;
 }
-.toggle-button .bar {
+.bar {
     height: 4px;
     width: 100%;
     background-color: gray;
     border-radius: 10px;
+    margin-bottom: 4px;
+    transition: all 0.5s;
 }
 a:link {
     text-decoration: none;
@@ -167,6 +168,21 @@ a:visited {
     text-decoration: none;
     color: black;
  }
+
+ /* Animate burger bar on click */
+.bar:first-of-type.onClick {
+    transition: 0.8s all ease-in-out 0.2s;
+    transform: translateY(8px) rotate(45deg);  
+}
+.bar:nth-of-type(2).onClick {
+    transition: 0.5s ;
+    transform: rotate(900deg);
+    opacity: 0; 
+}
+.bar:last-of-type.onClick {
+    transition: 0.8s all ease-in-out 0.2s;
+    transform: translateY(-8px) rotate(-45deg);
+}
 
  /*Document Styling  */
 .container {
