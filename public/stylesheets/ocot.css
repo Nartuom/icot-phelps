@@ -128,6 +128,9 @@ p {
     margin: 0;
     width: 100%;
 }
+.dropdown-content .dropdownLinks:hover {
+    color: #ffffff;
+}
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
